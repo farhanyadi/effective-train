@@ -1,0 +1,288 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Asesmen Berpikir Kritis | IPA/IPAS SD</title><style>
+:root{font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;color:#172b4d;background:#f3f6fc}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(120deg,#123b75,#2466ad);color:#fff;padding:25px max(20px,calc((100vw - 1180px)/2));}header h1{font-size:25px;margin:0 0 7px}header p{margin:0;opacity:.86}.wrap{max-width:1180px;margin:0 auto;padding:22px 18px 60px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}.tabs button{border:none;background:white;color:#244568;border-radius:11px;padding:11px 17px;font-weight:700;cursor:pointer}.tabs button.active{background:#174c93;color:#fff}.panel{display:none}.panel.active{display:block}.card{background:#fff;border:1px solid #e0e6f0;border-radius:17px;padding:20px;margin-bottom:16px;box-shadow:0 3px 13px #1c3e6510}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.metric b{font-size:29px;color:#174c93;display:block}.muted{color:#63738c;font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}label{font-weight:650;font-size:13px;display:block;margin:0 0 5px}input,select,textarea{width:100%;border:1px solid #cbd5e4;border-radius:9px;padding:10px 11px;font:inherit;background:#fff;color:#1a3152}textarea{min-height:82px}button{font:inherit}.btn{background:#1a559d;color:#fff;border:none;border-radius:10px;padding:10px 15px;font-weight:700;cursor:pointer}.btn:hover{filter:brightness(.95)}.btn.alt{background:#e8eef7;color:#21446e}.btn.warn{background:#fff1ed;color:#ab3129}.btn.small{padding:7px 10px;font-size:12px}.actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}h2{font-size:20px;margin:0 0 14px}h3{font-size:16px;margin:0 0 12px}.small{font-size:12px}.tag{display:inline-block;font-size:12px;font-weight:700;padding:4px 8px;border-radius:50px;background:#eaf0fa;color:#285489;margin-right:5px}.Mudah{background:#e5f6eb;color:#18713c}.Sedang{background:#fff4d7;color:#915f00}.Sulit{background:#ffe8e5;color:#a6312b}.qcard{padding:15px;border:1px solid #e1e7f0;border-radius:12px;margin:10px 0}.qcard p{line-height:1.55}.qhead{display:flex;gap:8px;justify-content:space-between;align-items:center}.choices{display:grid;gap:9px}.choice{display:flex;align-items:flex-start;gap:9px;border:1px solid #dde5f0;border-radius:10px;padding:12px;cursor:pointer;font-size:14px;line-height:1.45}.choice:has(input:checked){background:#eaf2ff;border-color:#4e83c6}.choice input{width:auto;margin:3px 0}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;border-bottom:1px solid #e5ebf2;padding:10px}th{background:#f3f7fd;color:#315173}td button{margin:2px}.empty{color:#657b93;padding:18px;text-align:center;border:1px dashed #d6dfeb;border-radius:12px}.checkrow{display:flex;align-items:center;gap:9px;padding:9px 0}.checkrow input{width:auto}progress{width:100%;height:13px;accent-color:#2364ac}.notice{padding:11px 13px;background:#eaf3ff;color:#2a4e7a;border-radius:10px;font-size:13px;line-height:1.5}.result{background:#eef7f3;border-left:4px solid #24915b;padding:14px;border-radius:8px}.bad{background:#fff1ef;border-left:4px solid #d55a4a}.barrow{display:grid;grid-template-columns:115px 1fr 48px;gap:10px;align-items:center;margin:10px 0;font-size:13px}.bar{height:11px;background:#e9edf4;border-radius:20px;overflow:hidden}.bar span{display:block;height:100%;background:#2470bb}.pill{display:inline-flex;align-items:center;gap:4px}.hidden{display:none!important}footer{font-size:12px;color:#66788e;text-align:center;margin-top:22px}@media(max-width:750px){.cards,.grid,.grid3{grid-template-columns:1fr}.wrap{padding:15px 10px}.card{padding:15px}.tabs button{flex:1}header{padding:23px 17px}.barrow{grid-template-columns:90px 1fr 36px}}@media print{header,.tabs,.actions,.noprint{display:none!important}.panel{display:none!important}#results.panel{display:block!important}.card{box-shadow:none;border:1px solid #ddd}body{background:white}}
+</style></head><body><header><h1>🧠 Asesmen Berpikir Kritis</h1><p>IPA/IPAS SD • Perubahan Wujud Benda • Bank Soal & Database Hasil Belajar</p></header><main class="wrap">
+<div class="tabs noprint"><button class="active" data-tab="dashboard">🏠 Beranda</button><button data-tab="bank">📚 Bank Soal</button><button data-tab="setup">⚙️ Atur Asesmen</button><button data-tab="exam">📝 Kerjakan</button><button data-tab="results">📊 Hasil & Laporan</button><button data-tab="data">💾 Database</button></div>
+<section id="dashboard" class="panel active"><div class="cards"><div class="card metric"><span class="muted">Bank Soal</span><b id="statQuestions">–</b><span class="muted">butir tersedia</span></div><div class="card metric"><span class="muted">Paket Aktif</span><b id="statSelected">–</b><span class="muted">butir dipilih</span></div><div class="card metric"><span class="muted">Hasil Tersimpan</span><b id="statResults">–</b><span class="muted">asesmen siswa</span></div><div class="card metric"><span class="muted">Rerata Nilai</span><b id="statAvg">–</b><span class="muted">skala 0–100</span></div></div><div class="card"><h2>Selamat datang</h2><p>Guru dapat memilih soal secara manual atau berdasarkan tingkat kesulitan serta indikator berpikir kritis. Siswa menjawab soal dan sistem langsung menilai, menganalisis indikator, serta menyimpan hasil secara lokal.</p><div class="notice"><b>Penyimpanan:</b> aplikasi memakai IndexedDB di browser pada perangkat ini. Data tetap tersimpan setelah halaman ditutup, selama data situs tidak dihapus. Data <b>tidak otomatis tersinkron</b> ke perangkat lain atau server. Gunakan ekspor cadangan secara berkala.</div><div class="actions"><button class="btn" data-go="setup">Buat Paket Soal</button><button class="btn alt" data-go="results">Lihat Hasil</button></div></div></section>
+<section id="bank" class="panel"><div class="card"><h2>Bank Soal</h2><div class="grid3"><div><label>Cari soal</label><input id="qSearch" placeholder="Ketik kata kunci..."></div><div><label>Kesulitan</label><select id="qDiff"><option>Semua</option><option>Mudah</option><option>Sedang</option><option>Sulit</option></select></div><div><label>Indikator</label><select id="qIndicator"><option>Semua</option><option>Interpretasi</option><option>Analisis</option><option>Evaluasi</option><option>Inferensi</option><option>Eksplanasi</option></select></div></div><div class="actions"><button class="btn" id="newQuestion">+ Tambah Soal</button><span id="qCount" class="muted"></span></div><div id="questionList"></div></div><div class="card hidden" id="editCard"><h3 id="editTitle">Tambah soal</h3><div class="grid"><div><label>Tingkat kesulitan</label><select id="editDiff"><option>Mudah</option><option>Sedang</option><option>Sulit</option></select></div><div><label>Indikator</label><select id="editIndicator"><option>Interpretasi</option><option>Analisis</option><option>Evaluasi</option><option>Inferensi</option><option>Eksplanasi</option></select></div></div><p><label>Pertanyaan</label><textarea id="editStem"></textarea></p><div class="grid"><div><label>Opsi A</label><input id="opt0"></div><div><label>Opsi B</label><input id="opt1"></div><div><label>Opsi C</label><input id="opt2"></div><div><label>Opsi D</label><input id="opt3"></div></div><p><label>Kunci benar</label><select id="editAnswer"><option value="0">A</option><option value="1">B</option><option value="2">C</option><option value="3">D</option></select></p><p><label>Pembahasan</label><textarea id="editExplain"></textarea></p><div class="actions"><button class="btn" id="saveQuestion">Simpan Soal</button><button class="btn alt" id="cancelEdit">Batal</button></div></div></section>
+<section id="setup" class="panel"><div class="card"><h2>Atur Paket Asesmen</h2><div class="grid"><div><label>Nama paket</label><input id="packName" value="Asesmen Berpikir Kritis IPAS Kelas IV"></div><div><label>Mode pemilihan soal</label><select id="selectionMode"><option value="manual">Pilih soal satu per satu</option><option value="auto">Otomatis berdasarkan kriteria</option></select></div></div><div id="autoControls" class="hidden"><p class="muted">Atur jumlah soal menurut tingkat kesulitan. Soal dipilih dari bank soal sesuai indikator yang dipilih.</p><div class="grid3"><div><label>🟢 Mudah</label><input type="number" id="nEasy" value="3" min="0"></div><div><label>🟡 Sedang</label><input type="number" id="nMid" value="3" min="0"></div><div><label>🔴 Sulit</label><input type="number" id="nHard" value="3" min="0"></div></div><p><label>Indikator yang diikutkan</label></p><div id="autoIndicators" class="grid3"></div><div class="actions"><button class="btn alt" id="generatePack">Terapkan Pilihan Otomatis</button></div></div><div id="manualControls"><p class="muted">Centang soal yang akan diberikan kepada siswa. Gunakan filter agar lebih cepat.</p><div class="grid"><div><label>Filter kesulitan</label><select id="selectDiff"><option>Semua</option><option>Mudah</option><option>Sedang</option><option>Sulit</option></select></div><div><label>Filter indikator</label><select id="selectIndicator"><option>Semua</option><option>Interpretasi</option><option>Analisis</option><option>Evaluasi</option><option>Inferensi</option><option>Eksplanasi</option></select></div></div><div class="actions"><button class="btn alt small" id="checkVisible">Pilih yang tampil</button><button class="btn alt small" id="uncheckVisible">Hapus yang tampil</button><button class="btn alt small" id="clearAll">Kosongkan paket</button></div><div id="selectList"></div></div><div class="notice" id="packSummary"></div><div class="actions"><button class="btn" id="savePack">💾 Simpan Paket</button><button class="btn alt" data-go="exam">Lanjut ke Asesmen</button></div></div></section>
+<section id="exam" class="panel"><div class="card" id="startCard"><h2>Mulai Asesmen</h2><div class="grid"><div><label>Nama siswa</label><input id="studentName" placeholder="Contoh: Andi Saputra"></div><div><label>Kelas</label><input id="studentClass" placeholder="Contoh: IV A"></div></div><p><label>Nama sekolah (opsional)</label><input id="schoolName" placeholder="Contoh: SD Negeri ..."></p><div id="examBrief" class="notice"></div><div class="actions"><button class="btn" id="startExam">Mulai Mengerjakan</button></div></div><div id="examCard" class="card hidden"><div class="qhead"><h2 id="examTitle">Soal</h2><span id="examProgressText" class="muted"></span></div><progress id="examProgress" value="0" max="100"></progress><div id="examQuestion"></div><div class="actions"><button class="btn alt" id="prevQuestion">← Sebelumnya</button><button class="btn" id="nextQuestion">Berikutnya →</button><button class="btn" id="finishExam">Selesai & Nilai</button></div></div><div id="finishCard" class="card hidden"></div></section>
+<section id="results" class="panel"><div class="card"><h2>Laporan Hasil Asesmen</h2><div class="grid"><div><label>Cari siswa</label><input id="resultSearch" placeholder="Nama / kelas / sekolah"></div><div><label>Pilih hasil tersimpan</label><select id="resultPicker"><option value="">Pilih hasil...</option></select></div></div><div class="actions noprint"><button class="btn alt" id="exportCSV">Ekspor Semua Hasil (CSV)</button><button class="btn alt" id="printReport" onclick="window.print()">Cetak Laporan Terpilih</button></div></div><div id="reportDetail"></div><div class="card"><h3>Riwayat Asesmen</h3><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Nama</th><th>Kelas</th><th>Soal</th><th>Nilai</th><th>Aksi</th></tr></thead><tbody id="historyRows"></tbody></table></div></div></section>
+<section id="data" class="panel"><div class="card"><h2>Database & Cadangan</h2><p>Data tersimpan di <b>IndexedDB</b> pada browser ini. Termasuk soal, paket soal aktif, dan seluruh riwayat jawaban siswa.</p><div class="actions"><button class="btn" id="exportBackup">⬇ Unduh Cadangan JSON</button><label style="margin:0"><span class="btn alt" style="display:inline-block;cursor:pointer">⬆ Impor Cadangan JSON</span><input id="importBackup" type="file" accept=".json,application/json" class="hidden"></label></div><p class="notice">Impor cadangan akan <b>mengganti seluruh data</b> aplikasi pada browser ini. Ekspor cadangan terlebih dahulu jika diperlukan. Untuk penggunaan banyak guru/perangkat secara bersamaan diperlukan backend dan database server, yang tidak termasuk dalam file HTML offline ini.</p><div class="actions"><button class="btn warn" id="resetData">Hapus Semua Data Lokal</button></div></div></section>
+<footer>Asesmen Berpikir Kritis • Data bersifat lokal pada browser • Soal kesulitan teoretis, perlu dikalibrasi melalui uji empiris</footer></main>
+<script>const SEED=[
+  {
+    "id": "IPAS-001",
+    "difficulty": "Mudah",
+    "indicator": "Analisis",
+    "stem": "Siti meletakkan es batu di atas meja. Setelah beberapa menit, es tersebut berubah menjadi air. Apa penyebab paling tepat dari peristiwa itu?",
+    "options": [
+      "Es menyerap panas dari lingkungan.",
+      "Es berubah karena terkena cahaya lampu saja.",
+      "Es mengeluarkan udara dingin.",
+      "Es berubah karena terkena gravitasi."
+    ],
+    "answer": 0,
+    "explanation": "Es menerima energi panas dari lingkungan sehingga mencair."
+  },
+  {
+    "id": "IPAS-002",
+    "difficulty": "Mudah",
+    "indicator": "Inferensi",
+    "stem": "Ibu menjemur pakaian basah di halaman rumah. Ketika cuaca panas dan berangin, pakaian lebih cepat kering. Kesimpulan yang tepat adalah ...",
+    "options": [
+      "Angin membuat air berubah menjadi es.",
+      "Panas dan aliran udara membantu mempercepat penguapan.",
+      "Air pada pakaian meresap seluruhnya ke dalam kain.",
+      "Sinar matahari menghilangkan kain yang basah."
+    ],
+    "answer": 1,
+    "explanation": "Suhu yang lebih tinggi dan aliran udara dapat meningkatkan laju penguapan."
+  },
+  {
+    "id": "IPAS-003",
+    "difficulty": "Mudah",
+    "indicator": "Interpretasi",
+    "stem": "Pada pagi hari, terdapat titik-titik air di permukaan luar gelas yang berisi air es. Peristiwa yang paling mungkin menjelaskan terbentuknya titik air adalah ...",
+    "options": [
+      "Air di dalam gelas selalu merembes keluar.",
+      "Es di dalam gelas menguap dengan cepat.",
+      "Uap air di udara mengembun pada permukaan gelas yang dingin.",
+      "Permukaan gelas menghasilkan air sendiri."
+    ],
+    "answer": 2,
+    "explanation": "Uap air di udara dapat mengembun ketika bersentuhan dengan permukaan yang dingin."
+  },
+  {
+    "id": "IPAS-004",
+    "difficulty": "Mudah",
+    "indicator": "Analisis",
+    "stem": "Dua es batu yang sama besar diletakkan di tempat berbeda. Es A berada di bawah sinar matahari dan es B di tempat teduh. Mengapa es A cenderung mencair lebih cepat?",
+    "options": [
+      "Es A selalu lebih berat.",
+      "Es B tidak menerima panas sama sekali.",
+      "Es A mempunyai warna berbeda.",
+      "Es A menerima energi panas lebih besar."
+    ],
+    "answer": 3,
+    "explanation": "Perbedaan paparan panas dapat menyebabkan perbedaan kecepatan mencair."
+  },
+  {
+    "id": "IPAS-005",
+    "difficulty": "Mudah",
+    "indicator": "Eksplanasi",
+    "stem": "Ketika air dipanaskan hingga mendidih, sebagian air berubah menjadi uap. Pernyataan manakah yang paling tepat?",
+    "options": [
+      "Air berubah dari cair menjadi gas karena menerima panas.",
+      "Air berubah menjadi zat yang sama sekali tidak ada.",
+      "Air berubah dari gas menjadi padat.",
+      "Air kehilangan seluruh sifatnya sebagai materi."
+    ],
+    "answer": 0,
+    "explanation": "Penguapan adalah perubahan wujud cair menjadi gas."
+  },
+  {
+    "id": "IPAS-006",
+    "difficulty": "Mudah",
+    "indicator": "Inferensi",
+    "stem": "Cokelat yang diletakkan di dekat kompor menjadi lunak dan meleleh. Apa yang paling mungkin terjadi jika cokelat tersebut dipindahkan ke tempat dingin yang sesuai?",
+    "options": [
+      "Cokelat langsung berubah menjadi gas.",
+      "Cokelat dapat kembali mengeras ketika suhunya turun.",
+      "Cokelat pasti menghilang.",
+      "Cokelat berubah menjadi air murni."
+    ],
+    "answer": 1,
+    "explanation": "Cokelat yang meleleh dapat kembali memadat ketika didinginkan."
+  },
+  {
+    "id": "IPAS-007",
+    "difficulty": "Sedang",
+    "indicator": "Interpretasi",
+    "stem": "Tiga es batu dengan ukuran awal sama diletakkan dalam wadah sejenis. Waktu mencairnya: A = 5 menit, B = 8 menit, C = 12 menit. Kesimpulan yang langsung didukung oleh data adalah ...",
+    "options": [
+      "Wadah C pasti berada dalam lemari pendingin.",
+      "Wadah A pasti terbuat dari logam.",
+      "Es A mencair paling cepat di antara ketiganya.",
+      "Es B tidak menerima panas."
+    ],
+    "answer": 2,
+    "explanation": "Data membuktikan perbedaan waktu mencair, tetapi tidak cukup untuk memastikan penyebabnya."
+  },
+  {
+    "id": "IPAS-008",
+    "difficulty": "Sedang",
+    "indicator": "Analisis",
+    "stem": "Rina mengisi dua piring yang sama dengan volume air yang sama. Piring pertama diletakkan di bawah kipas angin, sedangkan piring kedua tidak. Keduanya berada di ruangan yang sama. Apa tujuan utama percobaan Rina?",
+    "options": [
+      "Mengetahui warna piring terbaik.",
+      "Mengetahui massa piring yang lebih berat.",
+      "Membandingkan bentuk piring.",
+      "Menguji pengaruh aliran udara terhadap laju penguapan."
+    ],
+    "answer": 3,
+    "explanation": "Aliran udara menjadi faktor yang dibedakan, sedangkan kondisi lain dijaga sama."
+  },
+  {
+    "id": "IPAS-009",
+    "difficulty": "Sedang",
+    "indicator": "Evaluasi",
+    "stem": "Budi mengatakan bahwa air dalam panci yang ditutup tidak mungkin menguap. Bukti apa yang paling tepat untuk menilai pendapat Budi?",
+    "options": [
+      "Mengamati tetesan air pada bagian dalam tutup setelah pemanasan.",
+      "Mengukur tinggi meja yang digunakan.",
+      "Melihat warna luar panci.",
+      "Menimbang tutup sebelum memasak saja."
+    ],
+    "answer": 0,
+    "explanation": "Uap air dapat terbentuk dan kemudian mengembun pada bagian tutup yang lebih dingin."
+  },
+  {
+    "id": "IPAS-010",
+    "difficulty": "Sedang",
+    "indicator": "Inferensi",
+    "stem": "Sekelompok siswa menemukan bahwa air dalam wadah lebar berkurang lebih banyak daripada air dalam wadah sempit setelah dibiarkan pada kondisi yang sama. Kesimpulan yang paling masuk akal adalah ...",
+    "options": [
+      "Air dalam wadah lebar berubah menjadi zat lain.",
+      "Luas permukaan air dapat memengaruhi kecepatan penguapan.",
+      "Wadah sempit selalu lebih dingin.",
+      "Seluruh air dalam wadah lebar tumpah."
+    ],
+    "answer": 1,
+    "explanation": "Luas permukaan yang lebih besar memungkinkan lebih banyak air terpapar udara."
+  },
+  {
+    "id": "IPAS-011",
+    "difficulty": "Sedang",
+    "indicator": "Eksplanasi",
+    "stem": "Dina memasukkan air ke dalam cetakan es dan menyimpannya di freezer. Beberapa jam kemudian, air membeku. Penjelasan ilmiah paling tepat adalah ...",
+    "options": [
+      "Air menyerap banyak energi panas.",
+      "Air berubah menjadi bahan baru.",
+      "Air melepaskan panas sehingga dapat berubah menjadi padat.",
+      "Air berubah karena tekanan udara selalu meningkat."
+    ],
+    "answer": 2,
+    "explanation": "Saat membeku, air melepaskan energi panas ke lingkungan yang lebih dingin."
+  },
+  {
+    "id": "IPAS-012",
+    "difficulty": "Sedang",
+    "indicator": "Evaluasi",
+    "stem": "Dua kelompok menguji pengaruh suhu terhadap penguapan air. Kelompok A memakai 100 mL air pada dua suhu berbeda dalam wadah sama. Kelompok B memakai volume, suhu, dan wadah yang semuanya berbeda. Rancangan mana yang lebih baik?",
+    "options": [
+      "Kelompok B, karena mengubah lebih banyak faktor.",
+      "Keduanya pasti menghasilkan kesimpulan yang sama.",
+      "Kelompok B, karena percobaannya lebih rumit.",
+      "Kelompok A, karena lebih mampu mengisolasi pengaruh suhu."
+    ],
+    "answer": 3,
+    "explanation": "Percobaan yang adil mengubah variabel yang diteliti dan menjaga faktor lain tetap setara."
+  },
+  {
+    "id": "IPAS-013",
+    "difficulty": "Sulit",
+    "indicator": "Evaluasi",
+    "stem": "Seorang siswa menyimpulkan bahwa semua es mencair lebih cepat di bawah sinar matahari berdasarkan satu percobaan dengan es ukuran berbeda. Apa kelemahan utama kesimpulan tersebut?",
+    "options": [
+      "Ukuran es berbeda sehingga hasil belum dapat dikaitkan hanya dengan paparan matahari.",
+      "Es tidak pernah mencair di bawah sinar matahari.",
+      "Percobaan tidak boleh dilakukan di luar ruangan.",
+      "Satu percobaan selalu membuktikan semua keadaan."
+    ],
+    "answer": 0,
+    "explanation": "Ukuran es merupakan variabel pengganggu yang belum dikendalikan."
+  },
+  {
+    "id": "IPAS-014",
+    "difficulty": "Sulit",
+    "indicator": "Analisis",
+    "stem": "Dua gelas berisi air panas dengan volume dan suhu awal sama. Gelas A dibiarkan terbuka, gelas B ditutup rapat. Setelah beberapa waktu, air pada gelas A berkurang lebih banyak. Penjelasan terbaik adalah ...",
+    "options": [
+      "Pada gelas B tidak terjadi penguapan sama sekali.",
+      "Gelas terbuka memungkinkan lebih banyak uap keluar, sedangkan pada gelas tertutup sebagian uap dapat mengembun kembali.",
+      "Air pada gelas A berubah menjadi oksigen seluruhnya.",
+      "Gelas tertutup menghilangkan kemampuan air untuk menguap."
+    ],
+    "answer": 1,
+    "explanation": "Penguapan tetap dapat terjadi pada gelas tertutup, tetapi uap lebih tertahan dan dapat mengembun kembali."
+  },
+  {
+    "id": "IPAS-015",
+    "difficulty": "Sulit",
+    "indicator": "Evaluasi",
+    "stem": "Guru ingin membuktikan bahwa luas permukaan memengaruhi kecepatan penguapan. Manakah rancangan paling kuat untuk menguji hipotesis tersebut?",
+    "options": [
+      "Dua wadah berbeda luas permukaan dengan volume dan suhu air berbeda.",
+      "Dua wadah sama, satu berisi air dan satu kosong.",
+      "Dua wadah dengan luas permukaan berbeda, volume air awal sama, bahan wadah sama, dan kondisi lingkungan sama.",
+      "Dua wadah berbeda yang diletakkan pada lokasi berbeda tanpa pengukuran."
+    ],
+    "answer": 2,
+    "explanation": "Rancangan C mengendalikan variabel lain agar pengaruh luas permukaan lebih dapat dinilai."
+  },
+  {
+    "id": "IPAS-016",
+    "difficulty": "Sulit",
+    "indicator": "Inferensi",
+    "stem": "Dalam pengamatan tiga hari, kelompok siswa menemukan pakaian pada hari berangin lebih cepat kering. Akan tetapi, suhu udara dan kelembapan tidak dicatat. Kesimpulan paling bertanggung jawab adalah ...",
+    "options": [
+      "Angin pasti menjadi satu-satunya penyebab.",
+      "Kelembapan pasti tidak memengaruhi pengeringan.",
+      "Pakaian selalu kering dalam waktu yang sama.",
+      "Data menunjukkan keterkaitan, tetapi diperlukan pengujian dengan suhu dan kelembapan terkendali."
+    ],
+    "answer": 3,
+    "explanation": "Penilaian kritis membedakan keterkaitan dari hubungan sebab-akibat yang sudah dibuktikan."
+  },
+  {
+    "id": "IPAS-017",
+    "difficulty": "Sulit",
+    "indicator": "Evaluasi",
+    "stem": "Sekolah ingin menghemat energi untuk mengeringkan kain setelah kegiatan kebersihan. Terdapat area terbuka berangin dan area tertutup tanpa aliran udara. Pilihan paling logis adalah ...",
+    "options": [
+      "Membentangkan kain pada area terbuka berangin jika cuaca mendukung, karena meningkatkan penguapan tanpa listrik.",
+      "Menumpuk semua kain di sudut ruangan.",
+      "Memasukkan kain ke dalam plastik tertutup.",
+      "Meletakkan kain dalam ember agar tetap lembap."
+    ],
+    "answer": 0,
+    "explanation": "Solusi mempertimbangkan bukti ilmiah tentang penguapan dan kebutuhan penghematan energi."
+  },
+  {
+    "id": "IPAS-018",
+    "difficulty": "Sulit",
+    "indicator": "Eksplanasi",
+    "stem": "Setelah mengamati air yang dipanaskan berkurang volumenya, seorang siswa berkata, 'Air telah musnah.' Pernyataan manakah yang paling tepat untuk memperbaiki penjelasannya?",
+    "options": [
+      "Air musnah karena panas dapat menghilangkan materi.",
+      "Sebagian air berubah menjadi uap yang menyebar di udara; untuk menelusurinya dapat digunakan proses pengembunan.",
+      "Air hanya dapat berubah menjadi es.",
+      "Air yang menguap tidak lagi termasuk materi."
+    ],
+    "answer": 1,
+    "explanation": "Perubahan wujud tidak berarti air musnah; air berpindah ke fase gas dan dapat mengalami pengembunan."
+  }
+];const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const indicators=['Interpretasi','Analisis','Evaluasi','Inferensi','Eksplanasi'];let db,questions=[],pack={name:'Asesmen Berpikir Kritis IPAS Kelas IV',ids:SEED.map(q=>q.id)},results=[],editingId=null,session=null,questionIndex=0;
+function notify(s){alert(s)}function uid(){return 'Q-'+Date.now()+'-'+Math.random().toString(36).slice(2,8)}function objStore(store,mode='readonly'){return db.transaction(store,mode).objectStore(store)}function request(req){return new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}async function all(store){return request(objStore(store).getAll())}async function put(store,v){return request(objStore(store,'readwrite').put(v))}async function del(store,k){return request(objStore(store,'readwrite').delete(k))}async function clear(store){return request(objStore(store,'readwrite').clear())}
+async function init(){db=await new Promise((resolve,reject)=>{const r=indexedDB.open('asesmen_kritis_sd_v1',1);r.onupgradeneeded=()=>{for(const s of ['questions','packs','results'])if(!r.result.objectStoreNames.contains(s))r.result.createObjectStore(s,{keyPath:'id'})};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)});if((await all('questions')).length===0 && !(await request(objStore('packs').get('meta')))){for(const q of SEED)await put('questions',q);await put('packs',{id:'meta',name:pack.name,ids:pack.ids})}await refresh();wire();showTab('dashboard')}
+async function refresh(){questions=await all('questions');results=(await all('results')).sort((a,b)=>b.timestamp.localeCompare(a.timestamp));const p=await request(objStore('packs').get('meta'));if(p)pack={name:p.name,ids:p.ids.filter(id=>questions.some(q=>q.id===id))};$('packName').value=pack.name;$('statQuestions').textContent=questions.length;$('statSelected').textContent=pack.ids.length;$('statResults').textContent=results.length;$('statAvg').textContent=results.length?(results.reduce((s,r)=>s+r.score,0)/results.length).toFixed(1):'–';renderBank();renderSelectList();renderSummary();renderResultList();$('examBrief').innerHTML=`Paket <b>${esc(pack.name)}</b> berisi <b>${pack.ids.length}</b> soal. Nama dan kelas siswa wajib diisi.`}
+function showTab(id){document.querySelectorAll('.panel').forEach(e=>e.classList.toggle('active',e.id===id));document.querySelectorAll('[data-tab]').forEach(e=>e.classList.toggle('active',e.dataset.tab===id));window.scrollTo({top:0,behavior:'instant'})}
+function tag(q){return `<span class="tag ${esc(q.difficulty)}">${q.difficulty==='Mudah'?'🟢':q.difficulty==='Sedang'?'🟡':'🔴'} ${esc(q.difficulty)}</span><span class="tag">${esc(q.indicator)}</span>`}
+function renderBank(){const search=$('qSearch').value.toLowerCase(),d=$('qDiff').value,i=$('qIndicator').value;const filtered=questions.filter(q=>(d==='Semua'||q.difficulty===d)&&(i==='Semua'||q.indicator===i)&&(q.stem.toLowerCase().includes(search)||q.id.toLowerCase().includes(search)));$('qCount').textContent=`${filtered.length} dari ${questions.length} soal`;$('questionList').innerHTML=filtered.length?filtered.map(q=>`<article class="qcard"><div class="qhead"><div><b>${esc(q.id)}</b> ${tag(q)}</div><div><button class="btn alt small" data-edit="${esc(q.id)}">Edit</button> <button class="btn warn small" data-delete="${esc(q.id)}">Hapus</button></div></div><p>${esc(q.stem)}</p><div class="muted">Kunci: ${'ABCD'[q.answer]} • ${esc(q.explanation)}</div></article>`).join(''):'<div class="empty">Tidak ada soal sesuai filter.</div>'}
+function renderSelectList(){const d=$('selectDiff').value,i=$('selectIndicator').value;const filtered=questions.filter(q=>(d==='Semua'||q.difficulty===d)&&(i==='Semua'||q.indicator===i));$('selectList').innerHTML=filtered.map(q=>`<label class="checkrow" style="font-weight:400"><input data-qcheck="${esc(q.id)}" type="checkbox" ${pack.ids.includes(q.id)?'checked':''}><span>${tag(q)} ${esc(q.stem)}</span></label>`).join('')||'<div class="empty">Belum ada soal.</div>'}
+function renderSummary(){const selected=questions.filter(q=>pack.ids.includes(q.id));const counts=['Mudah','Sedang','Sulit'].map(d=>`${d}: ${selected.filter(q=>q.difficulty===d).length}`).join(' • ');$('packSummary').innerHTML=`<b>${pack.ids.length} soal dipilih.</b> ${esc(counts)}`;$('statSelected').textContent=pack.ids.length}
+function editQuestion(id){editingId=id||null;const q=questions.find(q=>q.id===id);$('editTitle').textContent=q?'Edit Soal '+q.id:'Tambah Soal Baru';$('editDiff').value=q?.difficulty||'Mudah';$('editIndicator').value=q?.indicator||'Analisis';$('editStem').value=q?.stem||'';for(let j=0;j<4;j++)$('opt'+j).value=q?.options[j]||'';$('editAnswer').value=String(q?.answer??0);$('editExplain').value=q?.explanation||'';$('editCard').classList.remove('hidden');$('editCard').scrollIntoView({behavior:'smooth'})}
+async function saveEdited(){const stem=$('editStem').value.trim(),options=[0,1,2,3].map(i=>$('opt'+i).value.trim());if(!stem||options.some(x=>!x))return notify('Lengkapi pertanyaan dan keempat opsi.');const q={id:editingId||uid(),difficulty:$('editDiff').value,indicator:$('editIndicator').value,stem,options,answer:+$('editAnswer').value,explanation:$('editExplain').value.trim()};await put('questions',q);$('editCard').classList.add('hidden');await refresh();notify('Soal berhasil disimpan.')}
+async function savePack(){if(!pack.ids.length)return notify('Pilih setidaknya satu soal.');pack.name=$('packName').value.trim()||'Asesmen Berpikir Kritis';await put('packs',{id:'meta',name:pack.name,ids:pack.ids});await refresh();notify('Paket soal berhasil disimpan.')}
+function startExam(){const name=$('studentName').value.trim(),klass=$('studentClass').value.trim();if(!name||!klass)return notify('Nama dan kelas wajib diisi.');if(!pack.ids.length)return notify('Pilih soal dahulu pada menu Atur Asesmen.');const chosen=pack.ids.map(id=>questions.find(q=>q.id===id)).filter(Boolean);session={name,klass,school:$('schoolName').value.trim(),packName:pack.name,questions:structuredClone(chosen),answers:{},started:new Date().toISOString()};questionIndex=0;$('startCard').classList.add('hidden');$('finishCard').classList.add('hidden');$('examCard').classList.remove('hidden');renderExam()}
+function renderExam(){const q=session.questions[questionIndex];$('examTitle').textContent=`Pertanyaan ${questionIndex+1}`;$('examProgressText').textContent=`${questionIndex+1} / ${session.questions.length}`;$('examProgress').value=(questionIndex+1)/session.questions.length*100;$('examQuestion').innerHTML=`<div class="qcard"><div>${tag(q)}</div><p><b>${esc(q.stem)}</b></p><div class="choices">${q.options.map((o,j)=>`<label class="choice"><input type="radio" name="answer" value="${j}" ${session.answers[q.id]===j?'checked':''}><span><b>${'ABCD'[j]}.</b> ${esc(o)}</span></label>`).join('')}</div></div>`;$('prevQuestion').disabled=questionIndex===0;$('nextQuestion').classList.toggle('hidden',questionIndex===session.questions.length-1);$('finishExam').classList.toggle('hidden',questionIndex!==session.questions.length-1)}
+function analysisFor(qs,answers,key){const a=qs.filter(q=>key==='difficulty'?q.difficulty===answers:q.indicator===answers);return a}function calculate(sess){const detail=sess.questions.map(q=>({question:q,chosen:sess.answers[q.id]??null,correct:sess.answers[q.id]===q.answer}));const correct=detail.filter(d=>d.correct).length;return {detail,correct,score:Math.round(correct/detail.length*100)}}
+async function finishExam(){const unanswered=session.questions.filter(q=>session.answers[q.id]===undefined);if(unanswered.length&&!confirm(`${unanswered.length} soal belum dijawab. Tetap selesaikan?`))return;const calc=calculate(session);const result={id:'R-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),timestamp:new Date().toISOString(),name:session.name,klass:session.klass,school:session.school,packName:session.packName,detail:calc.detail,correct:calc.correct,total:calc.detail.length,score:calc.score};await put('results',result);session=null;$('examCard').classList.add('hidden');$('finishCard').classList.remove('hidden');$('startCard').classList.remove('hidden');$('finishCard').innerHTML=`<h2>Asesmen selesai ✅</h2><div class="result"><b>Nilai: ${result.score}/100</b><p>${result.correct} jawaban benar dari ${result.total} soal.</p></div><div class="actions"><button class="btn" id="finishShow">Lihat Analisis Hasil</button><button class="btn alt" id="finishAgain">Asesmen Siswa Berikutnya</button></div>`;$('finishShow').onclick=()=>{showTab('results');$('resultPicker').value=result.id;renderReport(result)};$('finishAgain').onclick=()=>{$('finishCard').classList.add('hidden');$('studentName').value='';$('studentName').focus()};await refresh()}
+function renderResultList(){const filter=$('resultSearch').value.toLowerCase(),rs=results.filter(r=>[r.name,r.klass,r.school].join(' ').toLowerCase().includes(filter));const chosen=$('resultPicker').value;$('resultPicker').innerHTML='<option value="">Pilih hasil...</option>'+rs.map(r=>`<option value="${esc(r.id)}">${esc(r.name)} (${esc(r.klass)}) – ${r.score}</option>`).join('');if(rs.some(r=>r.id===chosen))$('resultPicker').value=chosen;$('historyRows').innerHTML=rs.map(r=>`<tr><td>${new Date(r.timestamp).toLocaleString('id-ID')}</td><td>${esc(r.name)}</td><td>${esc(r.klass)}</td><td>${r.total}</td><td><b>${r.score}</b></td><td><button class="btn alt small" data-view="${esc(r.id)}">Detail</button> <button class="btn warn small" data-delres="${esc(r.id)}">Hapus</button></td></tr>`).join('')||'<tr><td colspan="6">Belum ada hasil tersimpan.</td></tr>'}
+function renderReport(r){if(!r){$('reportDetail').innerHTML='<div class="card empty">Pilih hasil siswa untuk melihat laporan.</div>';return}const bars=(field,values)=>values.map(v=>{const d=r.detail.filter(x=>x.question[field]===v),ok=d.filter(x=>x.correct).length;return `<div class="barrow"><b>${esc(v)}</b><div class="bar"><span style="width:${d.length?(ok/d.length*100):0}%"></span></div><span>${d.length?Math.round(ok/d.length*100)+'%':'–'}</span></div>`}).join('');let advice=r.score>=80?'Penguasaan baik. Berikan tantangan berupa evaluasi bukti dan argumen yang lebih kompleks.':r.score>=60?'Perlu penguatan pada indikator dengan nilai terendah menggunakan diskusi bukti dan percobaan sederhana.':'Prioritaskan pendampingan memahami data, sebab-akibat, dan alasan pemilihan jawaban.';$('reportDetail').innerHTML=`<div class="card"><h2>Laporan Individu</h2><p><b>${esc(r.name)}</b> • Kelas ${esc(r.klass)} • ${esc(r.school||'Sekolah tidak diisi')}<br><span class="muted">${new Date(r.timestamp).toLocaleString('id-ID')} • ${esc(r.packName)}</span></p><div class="cards" style="grid-template-columns:repeat(3,1fr)"><div><span class="muted">Nilai</span><h2>${r.score}/100</h2></div><div><span class="muted">Benar</span><h2>${r.correct}</h2></div><div><span class="muted">Jumlah soal</span><h2>${r.total}</h2></div></div><h3>Penguasaan per indikator</h3>${bars('indicator',indicators)}<h3>Penguasaan per kesulitan</h3>${bars('difficulty',['Mudah','Sedang','Sulit'])}<div class="notice"><b>Rekomendasi tindak lanjut:</b> ${advice}</div></div><div class="card"><h3>Rincian Jawaban</h3>${r.detail.map((d,i)=>`<div class="qcard"><div>${i+1}. ${tag(d.question)} ${d.correct?'<span style="color:green">✓ Benar</span>':'<span style="color:#c4382d">✕ Belum tepat</span>'}</div><p><b>${esc(d.question.stem)}</b></p><div class="muted">Jawaban siswa: ${d.chosen===null?'Tidak dijawab':('ABCD'[d.chosen]+'. '+esc(d.question.options[d.chosen]))}<br>Kunci: ${'ABCD'[d.question.answer]}. ${esc(d.question.options[d.question.answer])}<br>Pembahasan: ${esc(d.question.explanation)}</div></div>`).join('')}</div>`}
+function download(filename,content,mime){const blob=new Blob([content],{type:mime});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}function csvCell(x){return '"'+String(x??'').replace(/"/g,'""')+'"'}function exportCSV(){const rows=[['Waktu','Nama','Kelas','Sekolah','Paket','Benar','Jumlah Soal','Nilai'],...results.map(r=>[r.timestamp,r.name,r.klass,r.school,r.packName,r.correct,r.total,r.score])];download('laporan-asesmen.csv','\uFEFF'+rows.map(r=>r.map(csvCell).join(',')).join('\r\n'),'text/csv;charset=utf-8')}
+async function exportBackup(){const obj={format:'asesmen-kritis-v1',exportedAt:new Date().toISOString(),questions,pack,results};download('cadangan-asesmen.json',JSON.stringify(obj,null,2),'application/json')}
+async function importBackup(file){if(!file)return;let data;try{data=JSON.parse(await file.text());if(data.format!=='asesmen-kritis-v1'||!Array.isArray(data.questions)||!Array.isArray(data.results)||!Array.isArray(data.pack?.ids))throw Error('Format tidak sesuai');for(const q of data.questions){if(typeof q.id!=='string'||typeof q.stem!=='string'||!Array.isArray(q.options)||q.options.length!==4||!Number.isInteger(q.answer)||q.answer<0||q.answer>3)throw Error('Soal tidak valid')}for(const r of data.results)if(typeof r.id!=='string'||!Array.isArray(r.detail))throw Error('Hasil tidak valid')}catch(e){return notify('Gagal impor: '+e.message)}if(!confirm('Semua data saat ini akan diganti oleh cadangan ini. Lanjutkan?'))return;for(const store of ['questions','packs','results'])await clear(store);for(const q of data.questions)await put('questions',q);for(const r of data.results)await put('results',r);await put('packs',{id:'meta',name:data.pack.name||'Asesmen',ids:data.pack.ids});await refresh();notify('Impor berhasil.')}
+function wire(){document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>showTab(b.dataset.go));for(const id of ['qSearch','qDiff','qIndicator'])$(id).addEventListener('input',renderBank);$('questionList').onclick=async e=>{const ed=e.target.closest('[data-edit]'),de=e.target.closest('[data-delete]');if(ed)editQuestion(ed.dataset.edit);if(de&&confirm('Hapus soal ini dari bank?')){await del('questions',de.dataset.delete);pack.ids=pack.ids.filter(id=>id!==de.dataset.delete);await put('packs',{id:'meta',...pack});await refresh()}};$('newQuestion').onclick=()=>editQuestion();$('cancelEdit').onclick=()=>$('editCard').classList.add('hidden');$('saveQuestion').onclick=saveEdited;for(const id of ['selectDiff','selectIndicator'])$(id).onchange=renderSelectList;$('selectList').onchange=e=>{const id=e.target.dataset.qcheck;if(!id)return;pack.ids=e.target.checked?[...new Set([...pack.ids,id])]:pack.ids.filter(v=>v!==id);renderSummary()};function visibleIds(){return [...document.querySelectorAll('[data-qcheck]')].map(x=>x.dataset.qcheck)}$('checkVisible').onclick=()=>{pack.ids=[...new Set([...pack.ids,...visibleIds()])];renderSelectList();renderSummary()};$('uncheckVisible').onclick=()=>{pack.ids=pack.ids.filter(id=>!visibleIds().includes(id));renderSelectList();renderSummary()};$('clearAll').onclick=()=>{pack.ids=[];renderSelectList();renderSummary()};$('selectionMode').onchange=()=>{$('autoControls').classList.toggle('hidden',$('selectionMode').value!=='auto');$('manualControls').classList.toggle('hidden',$('selectionMode').value!=='manual')};$('autoIndicators').innerHTML=indicators.map(i=>`<label class="checkrow"><input type="checkbox" value="${i}" checked> ${i}</label>`).join('');$('generatePack').onclick=()=>{const inds=[...$('autoIndicators').querySelectorAll('input:checked')].map(x=>x.value);if(!inds.length)return notify('Pilih minimal satu indikator.');const counts={'Mudah':+$('nEasy').value,'Sedang':+$('nMid').value,'Sulit':+$('nHard').value};if(Object.values(counts).some(n=>!Number.isInteger(n)||n<0))return notify('Jumlah soal harus bilangan bulat tidak negatif.');let ids=[];for(const [diff,n] of Object.entries(counts)){const avail=questions.filter(q=>q.difficulty===diff&&inds.includes(q.indicator));if(n>avail.length)return notify(`Soal ${diff} tersedia hanya ${avail.length} untuk indikator yang dipilih.`);ids.push(...avail.slice(0,n).map(q=>q.id))}if(!ids.length)return notify('Atur jumlah soal minimal satu.');pack.ids=ids;renderSelectList();renderSummary();notify('Pilihan otomatis diterapkan. Klik Simpan Paket untuk menyimpannya.')};$('savePack').onclick=savePack;$('startExam').onclick=startExam;$('examQuestion').onchange=e=>{if(e.target.name==='answer')session.answers[session.questions[questionIndex].id]=+e.target.value};$('prevQuestion').onclick=()=>{questionIndex--;renderExam()};$('nextQuestion').onclick=()=>{questionIndex++;renderExam()};$('finishExam').onclick=finishExam;$('resultSearch').oninput=renderResultList;$('resultPicker').onchange=e=>renderReport(results.find(r=>r.id===e.target.value));$('historyRows').onclick=async e=>{const view=e.target.closest('[data-view]'),de=e.target.closest('[data-delres]');if(view){$('resultPicker').value=view.dataset.view;renderReport(results.find(r=>r.id===view.dataset.view))}if(de&&confirm('Hapus hasil siswa ini?')){await del('results',de.dataset.delres);renderReport(null);await refresh()}};$('exportCSV').onclick=exportCSV;$('exportBackup').onclick=exportBackup;$('importBackup').onchange=async e=>{await importBackup(e.target.files[0]);e.target.value=''};$('resetData').onclick=async()=>{if(!confirm('Hapus semua soal, paket dan hasil siswa dari database lokal? Tindakan ini tidak dapat dibatalkan.'))return;for(const s of ['questions','packs','results'])await clear(s);pack={name:'Asesmen Berpikir Kritis IPAS Kelas IV',ids:[]};await refresh();notify('Data lokal telah dikosongkan. Impor cadangan untuk memulihkan data.')}}
+init().catch(e=>{console.error(e);alert('Database tidak dapat dibuka. Gunakan browser modern (Chrome/Edge/Firefox), buka dari situs HTTPS/localhost jika mode file dibatasi, atau periksa izin penyimpanan. Detail: '+e.message)});
+</script></body></html>
